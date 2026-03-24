@@ -4,39 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neon Scrap Echoes</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff88;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .upgrade-tree, .navigation, .modal {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #00ff88;
+            border-radius: 10px;
+        }
+        .button {
+            background-color: #00ff88;
+            color: #0d0d0d;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #00cc66;
+        }
+        .click-area {
+            width: 100%;
+            height: 300px;
+            background-image: url('robot.png');
+            background-size: cover;
+            border: 2px dashed #00ff88;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Neon Scrap Echoes</h1>
-    </header>
-
-    <main>
-        <section id="game-area">
-            <h2>Game Mechanics</h2>
-            <p>All game mechanics will be implemented here.</p>
-        </section>
-
-        <section id="upgrade-tree">
-            <h2>Upgrade Tree</h2>
-            <p>Upgrade options will be presented here.</p>
-        </section>
-
-        <section id="popup-system">
-            <h2>Popups</h2>
-            <p>Popup messages for the game events will appear here.</p>
-        </section>
-    </main>
-
-    <nav id="bottom-nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Upgrades</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Help</a></li>
-        </ul>
-    </nav>
-
-    <script src="script.js"></script>
+    <h1>Neon Scrap Echoes</h1>
+    <div class="upgrade-tree">
+        <h2>Upgrade Tree</h2>
+        <div>
+            <h3>Body Upgrades</h3>
+            <ul>
+                <li>Upgrade 1</li>
+                <li>Upgrade 2</li>
+                <li>Upgrade 3</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Processor Upgrades</h3>
+            <ul>
+                <li>Upgrade 1</li>
+                <li>Upgrade 2</li>
+                <li>Upgrade 3</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Sensor Upgrades</h3>
+            <ul>
+                <li>Upgrade 1</li>
+                <li>Upgrade 2</li>
+                <li>Upgrade 3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="click-area" onclick="showModal()">
+        Click here for your robot character!
+    </div>
+    <div class="modal" id="modal" style="display: none;">
+        <h3>Robot Character Modal</h3>
+        <p>This is where you can interact with your robot character.</p>
+        <button class="button" onclick="closeModal()">Close</button>
+    </div>
+    <div class="navigation">
+        <button class="button">Upgrades</button>
+        <button class="button">Recycling</button>
+        <button class="button">Map</button>
+        <button class="button">Base</button>
+        <button class="button">Lore</button>
+    </div>
+    <script>
+        function showModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
